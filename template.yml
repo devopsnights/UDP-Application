@@ -1,24 +1,24 @@
 
 
+jobs:
+  - job: Build Job
+    steps:
 
+    - task: DotNetCoreCLI@2
+      displayName: dotnet build
+      inputs:
+        command: 'build'
+        
+    - task: DotNetCoreCLI@2
+      displayName: dotnet publish
+      inputs:
+        command: 'publish'
+        publishWebProjects: true
+        arguments: '--output $(Build.ArtifactStagingDirectory)'
 
-steps:
-
-- task: DotNetCoreCLI@2
-  displayName: dotnet build
-  inputs:
-    command: 'build'
-    
-- task: DotNetCoreCLI@2
-  displayName: dotnet publish
-  inputs:
-    command: 'publish'
-    publishWebProjects: true
-    arguments: '--output $(Build.ArtifactStagingDirectory)'
-
-- task: PublishBuildArtifacts@1
-  displayName: publish artifacts
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    - task: PublishBuildArtifacts@1
+      displayName: publish artifacts
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'

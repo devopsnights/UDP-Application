@@ -1,11 +1,11 @@
 
 
 trigger:
-  - none
+  - master
   
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
+jobs:
 
 - template: template.yml
