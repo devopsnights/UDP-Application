@@ -1,11 +1,5 @@
 
 
-trigger:
-  - master
-  
-pool:
-  vmImage: 'ubuntu-latest'
-
 jobs:
 
 - template: template.yml
