@@ -1,7 +1,8 @@
 
 
 jobs:
-  - job: Build Job
+  - job: BuildJob
+    displayName: Build Job
     steps:
 
     - task: DotNetCoreCLI@2
