@@ -11,7 +11,7 @@ steps:
 #   inputs:
 #     command: 'build'
 
-- template: include-npm-steps.yml
+- template: template.yml
 
 - task: DotNetCoreCLI@2
   inputs:
